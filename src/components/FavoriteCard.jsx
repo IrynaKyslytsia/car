@@ -7,7 +7,7 @@ import defaultImage from "../images/default-image.jpg";
 import { nanoid } from "nanoid";
 // import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-const FavoriteCard = ({ advert, carDetails, onOpen, onAddCars, handleSelectCar, favoriteCars, setFavoriteCars }) => {
+const FavoriteCard = ({ advert, carDetails, onOpen, favoriteCars, setFavoriteCars }) => {
     const [isActive, setIsActive] = useState(false);
 
     const {
@@ -40,9 +40,8 @@ const FavoriteCard = ({ advert, carDetails, onOpen, onAddCars, handleSelectCar, 
         console.log(favoriteId)
     };
 
-    const handleOpenModal = (carDetails) => {
+    const handleOpenModal = () => {
         onOpen();
-        handleSelectCar(carDetails)
     };
 
     return (

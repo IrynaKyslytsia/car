@@ -7,7 +7,7 @@ import DetailedInfo from "../DetailedInfo/DetailedInfo";
 
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, onOpen, carDetails }) => {
+const Modal = ({ onClose, onOpen }) => {
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
         return () => {
@@ -36,8 +36,7 @@ const Modal = ({ onClose, onOpen, carDetails }) => {
                         </BattonClose>
                     </IconContext.Provider>
                     <DetailedInfo
-                        onOpen={onOpen}
-                        carDetails={carDetails}/>
+                        onOpen={onOpen}/>
                 </ModalWindow>
             </Backdrop>,
             modalRoot)

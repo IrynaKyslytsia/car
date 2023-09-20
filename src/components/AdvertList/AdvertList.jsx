@@ -1,7 +1,7 @@
 import AdvertCard from "../AdvertCard/AdvertCard";
 import { List } from "./AdvertList.styled";
 
-const AdvertList = ({adverts, onOpen, onAddCars, handleSelectCar, favoriteCars, setFavoriteCars}) => {
+const AdvertList = ({adverts, onOpen, onAddCars, favoriteCars, setFavoriteCars}) => {
     return (
         <List>
             {adverts && adverts.map((advert) => (
@@ -9,7 +9,6 @@ const AdvertList = ({adverts, onOpen, onAddCars, handleSelectCar, favoriteCars, 
                     key={advert.id}
                     advert={advert}
                     onOpen={onOpen}
-                    handleSelectCar={handleSelectCar}
                     onAddCars={onAddCars}
                     favoriteCars={favoriteCars}
                     setFavoriteCars={setFavoriteCars}

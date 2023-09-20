@@ -6,13 +6,11 @@ import { LoadMoreButton } from "../components/MainButton/MainButton.styled";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Modal from "../components/Modal/Modal";
 
-const Catalog = ({onAddCars, carDetails, handleSelectCar, onOpen, onClose, isShowModal, favoriteCars, setFavoriteCars }) => {
+const Catalog = ({onAddCars, onOpen, onClose, isShowModal, favoriteCars, setFavoriteCars }) => {
     const [adverts, setAdverts] = useState([]);
     const [page, setPage] = useState(1);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    // const [isShowModal, setIsShowModal] = useState(false);
-    // const [selectCar, setSelectCar] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
@@ -37,14 +35,12 @@ const Catalog = ({onAddCars, carDetails, handleSelectCar, onOpen, onClose, isSho
             {error && <div>{error.message}</div>}
             {adverts && <AdvertList
                 adverts={adverts}
-                carDetails={carDetails}
-                handleSelectCar={handleSelectCar}
                 favoriteCars={favoriteCars}
                 setFavoriteCars={setFavoriteCars}
                 onAddCars={onAddCars}
                 onOpen={onOpen}/>}
             {(adverts.length > 0 && !isLoading) && <LoadMoreButton onClick={onLoadMore}>Load more</LoadMoreButton>}
-            {isShowModal && <Modal onOpen={onOpen} onClose={onClose} carDetails={carDetails} />}
+            {isShowModal && <Modal onOpen={onOpen} onClose={onClose} />}
         </>
     )
 };
