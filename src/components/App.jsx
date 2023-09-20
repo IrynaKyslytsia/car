@@ -40,6 +40,7 @@ const App = () => {
                     onCarList={handleSelectCar}/>} />
                 <Route path="favorites" element={<Favorites
                     favoriteCars={favoriteCars}
+                    carDetails={carDetails}
                     isShowModal={isShowModal}
                     onOpen={showModal}
                     onClose={closeModal}/>} />

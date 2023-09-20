@@ -6,7 +6,12 @@ const Home = () => {
             <Helmet>
                 <title>Car Rental Hub</title>
             </Helmet>
-            <h1>DRIVE YOUR DREAMS WITH US!</h1>
+            <h1 style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "48px"
+            }}>DRIVE YOUR DREAMS WITH US!</h1>
         </>
     )
 };

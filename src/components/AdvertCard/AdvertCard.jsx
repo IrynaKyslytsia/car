@@ -7,7 +7,7 @@ import defaultImage from "../../images/default-image.jpg";
 // import { nanoid } from "nanoid";
 // import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-const AdvertCard = ({ advert, onOpen, favoriteCars, onCarList, setFavoriteCars }) => {
+const AdvertCard = ({ advert, onOpen, onCarList, setFavoriteCars }) => {
     const [isActive, setIsActive] = useState(false);
 
     const {

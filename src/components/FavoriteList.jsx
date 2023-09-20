@@ -1,17 +1,14 @@
-import AdvertCard from "./AdvertCard/AdvertCard";
 import { List } from "./AdvertList/AdvertList.styled";
+import FavoriteCard from "./FavoriteCard";
 
 const FavoriteList = ({onOpen, onAddCars, favoriteCars, setFavoriteCars}) => {
     return (
         <List>
             {favoriteCars && favoriteCars.map((advert) => (
-                <AdvertCard
+                <FavoriteCard
                     key={advert.id}
                     advert={advert}
                     onOpen={onOpen}
-                    onAddCars={onAddCars}
-                    favoriteCars={favoriteCars}
-                    setFavoriteCars={setFavoriteCars}
                 />
             ))}
         </List>

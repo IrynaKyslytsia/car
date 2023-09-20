@@ -6,7 +6,7 @@ import { LoadMoreButton } from "../components/MainButton/MainButton.styled";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Modal from "../components/Modal/Modal";
 
-const Catalog = ({onAddCars, carDetails, onCarList, onOpen, onClose, isShowModal, favoriteCars, setFavoriteCars }) => {
+const Catalog = ({onAddCars, carDetails, onCarList, onOpen, onClose, onDelete, isShowModal, favoriteCars, setFavoriteCars }) => {
     const [adverts, setAdverts] = useState([]);
     const [page, setPage] = useState(1);
     const [error, setError] = useState(null);
@@ -39,6 +39,7 @@ const Catalog = ({onAddCars, carDetails, onCarList, onOpen, onClose, isShowModal
                 favoriteCars={favoriteCars}
                 setFavoriteCars={setFavoriteCars}
                 onAddCars={onAddCars}
+                onDelete={onDelete}
                 onOpen={onOpen}/>}
             {(adverts.length > 0 && !isLoading) && <LoadMoreButton onClick={onLoadMore}>Load more</LoadMoreButton>}
             {isShowModal && <Modal

@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import FavoriteList from "../components/FavoriteList";
 import Modal from "../components/Modal/Modal";
 
-const Favorites = ({ favoriteCars, onOpen, onClose, isShowModal }) => {
+const Favorites = ({ favoriteCars, onOpen, onClose, isShowModal, carDetails }) => {
     
 console.log(favoriteCars)
     return (
@@ -15,7 +15,9 @@ console.log(favoriteCars)
             <FavoriteList
                 favoriteCars={favoriteCars}
                 onOpen={onOpen} />
-            {isShowModal && <Modal onClose={onClose} />}
+            {isShowModal && <Modal
+                onClose={onClose}
+                carDetails={carDetails}/>}
         </>
     )
 };
