@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/car/static/css/main.b5320759.css",
+    "main.js": "/car/static/js/main.ee6f9e27.js",
+    "index.html": "/car/index.html",
+    "main.b5320759.css.map": "/car/static/css/main.b5320759.css.map",
+    "main.ee6f9e27.js.map": "/car/static/js/main.ee6f9e27.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.ee6f9e27.js"
+  ]
+}
