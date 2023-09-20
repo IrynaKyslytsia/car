@@ -2,32 +2,32 @@
 import { CardWrapper, Conditions, ConditionsWrapper, Description, Image, Info, MainInfo, SecondTitle, Title } from "./DetailedInfo.styled";
 import MainButton from "../MainButton/MainButton";
 
-const DetailedInfo = () => {
+const DetailedInfo = ({carDetails}) => {
     
-    // const {
-    //     id,
-    //     make,
-    //     img,
-    //     model,
-    //     rentalPrice,
-    //     year,
-    //     address,
-    //     type,
-    //     description,
-    //     accessories,
-    //     fuelConsumption,
-    //     engineSize,
-    //     functionalities,
-    //     rentalConditions,
-    //     mileage
-    // } = carDetails;
+    const {
+        id,
+        make,
+        img,
+        model,
+        rentalPrice,
+        year,
+        address,
+        type,
+        description,
+        accessories,
+        fuelConsumption,
+        engineSize,
+        functionalities,
+        rentalConditions,
+        mileage
+    } = carDetails;
 
-    // const city = address.split(",")[1];
-    // const country = address.split(",")[2];
+    const city = address.split(",")[1];
+    const country = address.split(",")[2];
 
     return (
         <CardWrapper>
-            {/* <MainInfo>
+            <MainInfo>
                 <Image src={img} alt={make} width="100%" height="248"/>
                 <Title>
                     <h3>{make}{" "} 
@@ -57,9 +57,9 @@ const DetailedInfo = () => {
                 <ConditionsWrapper>
                     <Conditions>{rentalConditions}</Conditions>
                     <Conditions>{mileage}</Conditions>
-                    <Conditions>{rentalPrice} $</Conditions>
+                    <Conditions>{rentalPrice}</Conditions>
                 </ConditionsWrapper>
-            </div> */}
+            </div>
             <MainButton as="a" href="#" size="medium">Rental car</MainButton>
         </CardWrapper>
     )

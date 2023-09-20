@@ -9,6 +9,11 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 const App = () => {
     const [favoriteCars, setFavoriteCars] = useLocalStorage('favorites', []);
     const [isShowModal, setIsShowModal] = useState(false);
+    const [carDetails, setCarDetails] = useState(null);
+
+    function handleSelectCar(car) {
+    setCarDetails(car);
+    }
 
     const showModal = () => {
         setIsShowModal(true);
@@ -28,11 +33,11 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path="catalog" element={<Catalog
                     onAddCars={handleFavoriteCars}
-                    favoriteCars={favoriteCars}
-                    setFavoriteCars={setFavoriteCars}
+                    carDetails={carDetails}
                     isShowModal={isShowModal}
                     onOpen={showModal}
-                    onClose={closeModal} />} />
+                    onClose={closeModal}
+                    onCarList={handleSelectCar}/>} />
                 <Route path="favorites" element={<Favorites
                     favoriteCars={favoriteCars}
                     isShowModal={isShowModal}

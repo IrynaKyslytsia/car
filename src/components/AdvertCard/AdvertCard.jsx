@@ -7,7 +7,7 @@ import defaultImage from "../../images/default-image.jpg";
 // import { nanoid } from "nanoid";
 // import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-const AdvertCard = ({ advert, carDetails, onOpen, favoriteCars, setFavoriteCars }) => {
+const AdvertCard = ({ advert, onOpen, favoriteCars, onCarList, setFavoriteCars }) => {
     const [isActive, setIsActive] = useState(false);
 
     const {
@@ -21,7 +21,35 @@ const AdvertCard = ({ advert, carDetails, onOpen, favoriteCars, setFavoriteCars 
         type,
         id,
         accessories,
+        fuelConsumption,
+        engineSize,
+        description,
+        functionalities,
+        rentalConditions,
+        mileage,
     } = advert;
+
+    const handleClick = () => {
+    const carDetails = {
+      make,
+      img,
+      model,
+      rentalPrice,
+      year,
+      address,
+      mileage,
+      type,
+      id,
+      accessories,
+      fuelConsumption,
+      engineSize,
+      description,
+      functionalities,
+      rentalConditions,
+    };
+    onOpen();
+    onCarList(carDetails);
+  }
 
     const city = address.split(",")[1];
     const country = address.split(",")[2];
@@ -36,11 +64,6 @@ const AdvertCard = ({ advert, carDetails, onOpen, favoriteCars, setFavoriteCars 
 
     const handleDelete = (id) => {
         setIsActive(false);
-        setFavoriteCars(favoriteCars.filter(car => car.id !== id))
-    };
-
-    const handleOpenModal = () => {
-        onOpen();
     };
 
     return (
@@ -64,7 +87,7 @@ const AdvertCard = ({ advert, carDetails, onOpen, favoriteCars, setFavoriteCars 
                 <span>{id} | </span> 
                 <span>{accessory}</span>
             </CardInfo>
-            <MainButton size="large" onClick={() => handleOpenModal(carDetails)}>Learn more</MainButton>
+            <MainButton size="large" onClick={handleClick}>Learn more</MainButton>
         </Card>
     )
 };

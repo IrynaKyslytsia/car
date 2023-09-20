@@ -19,6 +19,7 @@ export const Image = styled.img`
     outline: none;
     border-radius: 14px;
     background-color: #F3F3F2; 
+    object-fit: cover;
 `;
 
 export const Title = styled.div`
